@@ -1,25 +1,28 @@
 package com.example.android.cz3002project;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.TextView;
 
+public class DrawingGameActivity extends ActionBarActivity {
 
-public class GamesMenu extends ActionBarActivity {
+    public static TextView scoreTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_games_menu);
+        setContentView(R.layout.activity_drawing_game);
+
+        scoreTextView = (TextView)findViewById(R.id.score_text);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_games_menu, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -37,18 +40,4 @@ public class GamesMenu extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-    public void PlayGame2(View view)
-    {
-        Intent intent = new Intent(GamesMenu.this, DrawingGameActivity.class);
-        startActivity(intent);
-    }
-
-    public void PlayGame3(View view)
-    {
-        Intent intent = new Intent(GamesMenu.this, Game3.class);
-        startActivity(intent);
-    }
-
-
 }
